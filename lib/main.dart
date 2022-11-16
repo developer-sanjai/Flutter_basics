@@ -75,24 +75,35 @@ class _HomepageState extends State<Homepage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
-                    backgroundColor: Colors.purple, // background
-                    foregroundColor: Colors.white, // foreground
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      // ignore: deprecated_member_use
+                      backgroundColor: Colors.purple, // background
+                      foregroundColor: Colors.white, // foreground
+                    ),
+                    onPressed: _decrement,
+                    child: const Text('MINUS'),
                   ),
-                  onPressed: _decrement,
-                  child: const Text('MINUS'),
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
-                    foregroundColor: Colors.white,
-                    // foreground
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.purple,
+                      foregroundColor: Colors.white,
+                      // foreground
+                    ),
+                    onPressed: _increment,
+                    child: const Text('ADD'),
                   ),
-                  onPressed: _increment,
-                  child: const Text('ADD'),
                 ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple, // background
@@ -100,7 +111,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                   onPressed: _reset,
                   child: const Text('RESET'),
-                )
+                ),
               ],
             )
           ],
