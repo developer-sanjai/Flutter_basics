@@ -75,21 +75,32 @@ class _HomepageState extends State<Homepage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FloatingActionButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // ignore: deprecated_member_use
+                    backgroundColor: Colors.purple, // background
+                    foregroundColor: Colors.white, // foreground
+                  ),
                   onPressed: _decrement,
-                  tooltip: 'Minus',
-                  child: const Icon(Icons.remove),
+                  child: const Text('MINUS'),
                 ),
-                FloatingActionButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    foregroundColor: Colors.white,
+                    // foreground
+                  ),
                   onPressed: _increment,
-                  tooltip: 'Add',
-                  child: const Icon(Icons.add),
+                  child: const Text('ADD'),
                 ),
-                FloatingActionButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple, // background
+                    foregroundColor: Colors.white, // foreground
+                  ),
                   onPressed: _reset,
-                  tooltip: 'Reset',
-                  child: const Icon(Icons.refresh),
-                ),
+                  child: const Text('RESET'),
+                )
               ],
             )
           ],
