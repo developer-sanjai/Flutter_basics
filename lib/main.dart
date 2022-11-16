@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     title: "Counter App",
-    theme: ThemeData(primarySwatch: Colors.indigo),
+    theme: ThemeData(primarySwatch: Colors.purple),
     home: const Homepage(),
   ));
 }
@@ -29,6 +29,12 @@ class _HomepageState extends State<Homepage> {
         _count--;
       });
     }
+  }
+
+  void _reset() {
+    setState(() {
+      _count = 0;
+    });
   }
 
   @override
@@ -62,7 +68,7 @@ class _HomepageState extends State<Homepage> {
             Text(
               'Count Value: $_count',
               style: const TextStyle(
-                  color: Colors.red,
+                  color: Colors.orange,
                   fontSize: 30,
                   fontFamily: 'Times New Roman'),
             ),
@@ -78,6 +84,11 @@ class _HomepageState extends State<Homepage> {
                   onPressed: _increment,
                   tooltip: 'Add',
                   child: const Icon(Icons.add),
+                ),
+                FloatingActionButton(
+                  onPressed: _reset,
+                  tooltip: 'Reset',
+                  child: const Icon(Icons.refresh),
                 ),
               ],
             )
